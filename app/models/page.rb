@@ -1,4 +1,5 @@
 class Page < ApplicationRecord
+  has_many :results
   validates :url, presence: true
   validates :check_type, presence: true
   validates :selector, presence: true
@@ -10,10 +11,10 @@ class Page < ApplicationRecord
               when 'text'
                 scraper.text(selector: selector).downcase == match_text.downcase
               when 'present'
-                scraper.present?
+                scraper.present?(selector: selector)
               when 'not_present'
-                !scraper.present?
+                !scraper.present?(selector: selector)
               end
-    results.create(success: result)
+  results.create(success: result)
   end
 end
