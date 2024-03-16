@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :check_type, style: "display: block" %>
-    <%= form.text_field :check_type %>
+    <%= form.select :check_type, [["Text", "text"], ["Present", "present"], ["Not Present", "not_present"]]%>
   </div>
 
   <div>
