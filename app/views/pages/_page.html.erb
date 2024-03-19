@@ -1,22 +1,11 @@
-<div id="<%= dom_id page %>">
-  <p>
-    <strong>Url:</strong>
-    <%= page.url %>
-  </p>
 
-  <p>
-    <strong>Check type:</strong>
-    <%= page.check_type %>
-  </p>
+<h5 class="font-bold"><%= page.name %></h5>
+<!-- <%= link_to page, id: dom_id(page) do %>  
+  <p class="px-1 text-sm text-gray-500 hover:bg-gray-100 w-1/3 border border-gray-200 rounded shadow"> <%= page.url %> </p>
+<% end %> -->
 
-  <p>
-    <strong>Selector:</strong>
-    <%= page.selector %>
-  </p>
+<%= link_to page.url, page_path(page) , class:"px-1 text-sm text-gray-500 hover:bg-gray-100 w-1/3 border border-gray-200 rounded shadow" %>  
 
-  <p>
-    <strong>Match text:</strong>
-    <%= page.match_text %>
-  </p>
 
-</div>
+
+ 
