@@ -1,5 +1,6 @@
 class Page < ApplicationRecord
   has_many :results
+  validates :name, presence: true
   validates :url, presence: true
   validates :check_type, presence: true
   validates :selector, presence: true
